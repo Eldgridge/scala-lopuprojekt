@@ -1,0 +1,20 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+
++nocsrf
+GET     /                           controllers.HomeController.index
+
++nocsrf
+GET     /gif                        controllers.GifController.index
+
++nocsrf
+POST    /gif                        controllers.GifController.doContentGet
+
+# Map static resources from the /public folder to the /assets URL path
++nocsrf
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+

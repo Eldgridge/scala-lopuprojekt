@@ -1,0 +1,106 @@
+@(message: String, style: String = "scala") 
+
+@defining(play.core.PlayVersion.current) { version =>
+
+
+
+<!DOCTYPE html>
+    <html>
+        <head>
+                <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+                <!-- Optional theme -->
+            <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+                <!-- Latest compiled and minified JavaScript -->
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'">
+        </head>
+
+
+
+  <body>
+      <nav class="navbar navbar-default">
+          <div class="container-fluid">
+              <div>
+
+                  <ul class="list-inline">
+                      <li>
+                          <form action="@routes.HomeController.index()" method="get">
+                              <button class="btn btn-default navbar-btn">Home</button>
+                          </form>
+                      </li>
+                      <li>
+                          <form action="@routes.GifController.index()" method="get">
+                              <button class="btn btn-default navbar-btn">Gifs</button>
+                          </form>
+                      </li>
+                  </ul>
+              </div>
+
+          </div>
+      </nav>
+
+      <div class="row" style="max-width:100%">
+          <div class="col-xs-6 col-md-4"></div>
+          <div class="col-xs-6 col-md-4">
+
+              <center>
+
+              <h2>Mille jaoks see leht loodud on?</h2>
+
+              <p>
+                  Veebileht on loodud Tartu ülikooli programmeerimiskeelte aine lõpuprojekti jaoks.
+                  Siin lehel demon ja seletan natukene oma loodud rakendust.
+                  Rakendus näitan kasutaja soovitud teemal viite erinevat gif-i,
+                  mis on saadud Giphy.com lehelt.
+              </p>
+
+                  <hr>
+
+              <h2>Mida kasutasin selle projekti loomisel?</h2>
+
+                <p>
+                    Rakenduse loomisel kasutasin Play frameworki @version , Bootstrap 3.3.7 ja Giphy APIt.
+                    Veebilehe üleval hoidmiseks kasutan Herokut
+                    Projekti põhjaks võtsin Play kodulehelt play-scala-starter-example projekti.
+                    Projektiga saab lähemalt tutvuda ja alla tõmmata siit:
+                </p>
+
+                  <hr>
+
+                <h2>Miks selline lõpuprojekt?</h2>
+
+                    <p>
+                        Proovisin pikemat aega luua lihtsat veebirakendust,
+                        mis kasutaks Play frameworki ja slicki. Lõpuks loobusin sellest,
+                        kuna frameworki oli minu jaoks uus ning paljud playframeworki
+                        dokumentatsioonid polnud ajakohased. Seega otsustasin luua veebirakenduse,
+                        mis kuvab APIdelt saadud informatsiooni. Tean, et projekt on suhteliselt väikese skoobiga,
+                        kuid kuna investeerisin juba nii palju aega sellesse kodutöösse siis ei
+                        oleks ma suutnud rahulikult magada, kui ma ei oleks midagigi esitanud.
+                    </p>
+
+                  <hr>
+                <h2>Kes on kodutöö esitaja?</h2>
+                  <p>
+                      Silver Liivamägi
+
+                  </p>
+              </center>
+
+          </div>
+          <div class="col-xs-6 col-md-4"></div>
+      </div>
+
+
+      <nav class="navbar navbar-default navbar-fixed-bottom">
+          <div class="container-fluid">
+              </div>
+      </nav>
+
+  </body>
+
+
+}

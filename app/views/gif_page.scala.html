@@ -1,0 +1,93 @@
+
+@(gif_url: List[(String, String)])
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+            <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+            <!-- Optional theme -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+            <!-- Latest compiled and minified JavaScript -->
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'">
+    </head>
+
+
+
+
+
+    <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div>
+
+                    <ul class="list-inline">
+                        <li>
+                            <form action="@routes.HomeController.index()" method="get">
+                                <button class="btn btn-default navbar-btn">Home</button>
+                            </form>
+                        </li>
+                        <li>
+                            <form action="@routes.GifController.index()" method="get">
+                                <button class="btn btn-default navbar-btn">Gifs</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+
+
+
+        <div class="row" style="max-width:100%">
+            <div class="col-xs-6 col-md-4"></div>
+            <div class="col-xs-6 col-md-4">
+
+
+        <h1>Now isnt this fun :)</h1>
+
+        <form method="post" action="@routes.GifController.doContentGet()">
+            <div class="form-group">
+            <label for="topic">What gifs do you require?</label>
+            <input type="text"  class="form-control" name="topic" id="topic">
+                <br>
+                <center>
+            <input type="submit" value="Submit" class="btn btn-success" style = "width: 100%">
+                </center>
+            </div>
+        </form>
+
+        <center>
+        <h2>The size of the list is @gif_url.size </h2>
+
+        @gif_url.map{ element =>
+
+            <br>
+            <h4>@element._2</h4>
+            <img src=@element._1 height="350" width="400">
+            <br>
+        }
+            <br>
+            <br>
+
+        </center>
+            </div>
+            <div class="col-xs-6 col-md-4"></div>
+        </div>
+
+        <br>
+
+        <nav class="navbar navbar-default navbar-fixed-bottom">
+            <div class="container-fluid">
+                <img src=@routes.Assets.versioned("images/Poweredby_100px-White_VertText.png") alt="powered_by_gify">
+            </div>
+        </nav>
+
+
+    </body>
+</html>
