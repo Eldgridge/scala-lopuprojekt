@@ -9,7 +9,7 @@ import play.api.data.Forms._
 import play.filters.headers.SecurityHeadersFilter
 
 
-class GifController extends Controller {
+class GifController extends InjectedController() {
   var content : String = "hackerman"
 
   case class gif_topic(topic: String)
