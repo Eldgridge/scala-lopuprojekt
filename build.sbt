@@ -1,4 +1,4 @@
-name := """Scala lõpuprojekt"""
+name := """Scala-lõpuprojekt"""
 
 version := "1.0-SNAPSHOT"
 
