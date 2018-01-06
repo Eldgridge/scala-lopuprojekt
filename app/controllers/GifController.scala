@@ -67,6 +67,7 @@ class GifController extends InjectedController() {
   }
 
 
+
   def collect_url(json: JsValue) : List[(String, String)] = {
 
     var list_of: List[(String, String)] = List()
@@ -78,7 +79,11 @@ class GifController extends InjectedController() {
 
     else {
 
-      for (i <- 0 to 4) {
+
+
+      var size = (json\ "data").as[JsArray].value.size
+
+      for (i <- 0 until size) {
         var post = (json \ "data" \ i \ "images" \ "original" \ "url").as[String]
         var title = (json \ "data" \ i \ "title").as[String]
         println(title)
