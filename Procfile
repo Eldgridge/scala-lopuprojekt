@@ -1,2 +1,2 @@
-web: target/universal/stage/bin/Scala-lõpuprojekt -Dhttp.port=${PORT}
-console: target/universal/stage/bin/Scala-lõpuprojekt -main scala.tools.nsc.MainGenericRunner -usejavacp
+web: target/universal/stage/bin/Scala-l-puprojekt -Dhttp.port=${PORT}
+console: target/universal/stage/bin/Scala-l-puprojekt -main scala.tools.nsc.MainGenericRunner -usejavacp
